@@ -1,0 +1,73 @@
+@font-face{
+    font-family: "YoungSerif";
+    src: url(fonts/YoungSerif-Regular.ttf);
+}
+*{
+    font-family: "YoungSerif";
+    /* color: white; */
+}
+.navbar{
+    background-color: #284e3d !important;
+    /* color: white; */
+}
+.navbar-brand{
+    color: #fff;
+    height: 80px;
+}
+.btn-primary{
+    background-color: #284e3d;
+    border-color: #284e3d;
+}
+.btn-primary:hover {
+    background-color: #284e3d;
+    border-color: #284e3d;
+}
+.btn-primary:active{
+    background-color: #284e3d !important;
+    border-color: #284e3d !important;
+}
+.swal2-actions{
+    width: 90% !important;
+}
+.swal2-confirm{
+    background-color: #284e3d !important;
+    width: 100% !important;
+}
+.images-list{
+    justify-content: space-around;
+}
+.images-list > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+.images-list-selected{
+    border: 3px solid #284e3d;
+
+}
+.card-body{
+    /* background-image: url(images/1.jpg); */
+    background-size: cover;
+    /* color: blue; */
+    background-position: center;
+    /* position: relative; */
+    /* height: 300px; */
+}
+/* .post-content{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+} */
+/* .overley{
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    /* height: auto */
+/* } */ */
+
+@media only screen and (max-width: 500px){
+    .main{
+        padding: 10px 4px !important;
+    }
+}
