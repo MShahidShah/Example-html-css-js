@@ -76,7 +76,7 @@ li {
     color: white;
     padding: 10px 15px;
 }
-.quiz-container span{
+.quiz-container .close-button{
     position: absolute;
     right: 0px;
     width: 30px;
