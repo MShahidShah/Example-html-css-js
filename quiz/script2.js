@@ -31,46 +31,46 @@ function showModal() {
     document.querySelector('.overlay').classList.add('showoverlay');
     document.querySelector('.quiz-container').classList.add('showquiz-container');
     displayQuestion();
+   if (nextButton.classList.contains('hide')) {
+        startTimer();
+   }
 }
 
 function closeModal() {
     document.querySelector('.overlay').classList.remove('showoverlay');
     document.querySelector('.quiz-container').classList.remove('showquiz-container');
+    stopTimer();
 }
-
-nextButton.addEventListener("click", nextQuestion);
 
 function startTimer() {
     countdown = setInterval(() => {
         timer--;
         timerElement.textContent = timer + " seconds";
         if (timer === 0) {
-            clearInterval(countdown);
+            stopTimer();
             nextQuestion();
         }
     }, 1000);
 }
 
+function stopTimer() {
+    clearInterval(countdown);
+}
+
 function displayQuestion() {
-    if (currentQuestion < questions.length) {
-        questionElement.textContent = questions[currentQuestion].question;
-        choicesElement.innerHTML = '';
+    questionElement.textContent = questions[currentQuestion].question;
+    choicesElement.innerHTML = '';
 
-        questions[currentQuestion].choices.forEach((choice, index) => {
-            const li = document.createElement('li');
-            li.textContent = choice;
-            li.addEventListener('click', () => checkAnswer(index));
-            choicesElement.appendChild(li);
-        });
-
-        startTimer();
-    } else {
-        endQuiz();
-    }
+    questions[currentQuestion].choices.forEach((choice, index) => {
+        const li = document.createElement('li');
+        li.textContent = choice;
+        li.addEventListener('click', () => checkAnswer(index));
+        choicesElement.appendChild(li);
+    });
 }
 
 function checkAnswer(choice) {
-    clearInterval(countdown);
+    stopTimer();
     if (choice === questions[currentQuestion].correctAnswer) {
         score++;
         scoreElement.textContent = score;
@@ -82,12 +82,20 @@ function checkAnswer(choice) {
 function nextQuestion() {
     currentQuestion++;
     timer = 60;
-    displayQuestion();
-    nextButton.classList.add("hide");
+    timerElement.textContent = timer + " seconds";
+    if (currentQuestion < questions.length) {
+        displayQuestion();
+        startTimer();
+        nextButton.classList.add("hide");
+    }else{
+        endQuiz();   
+    }
 }
 
 function endQuiz() {
     questionElement.textContent = "Quiz Over!";
     choicesElement.innerHTML = '';
-    nextButton.style.display = "none";
+    nextButton.classList.add("hide");
+    timer = 0;
+    timerElement.textContent = timer + " seconds";
 }
