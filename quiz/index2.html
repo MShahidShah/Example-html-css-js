@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <button class="btn-quiz" onclick="showModal()">Quiz App</button>
+
+    <div class="overlay" onclick="closeModal()"></div>
+
+    <div class="quiz-container">
+        <h1>Quiz App</h1>
+        <p id="question"></p>
+        <ul id="choices"></ul>
+        <p>Score: <span id="score">0</span></p>
+        <p>Time Left: <span id="timer">60</span> seconds</p>
+        <button id="next-button" class="hide" onclick="nextQuestion()">Next</button>
+        <span onclick="closeModal()">&#10006;</span>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>

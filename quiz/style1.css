@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* color: black; */
+}
+.btn-quiz{
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+.overlay{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0; 
+    transition: 1s;
+}
+.showoverlay{
+    opacity: 1;
+    z-index: 1;
+}
+.quiz-container{
+    width: 350px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px 20px;
+    position: absolute;
+    transition: 2s;
+    left: 50%;
+    top: -50%;
+    z-index: 9;
+    box-shadow: 0px 0px 10px 3px #ccc;
+    transform: translate(-50%, -50%);
+}
+/* /* .quiz-container {
+
+    /* max-width: 400px; */
+    /* margin: 0 auto; */
+    /* padding: 20px; */
+    /* background-color: #fff; */
+    /* border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 6px 6px 4px rgba(128, 128, 128, 0.5); */
+    /* box-shadow: 5px 0 5px rgba(128,128,128 0.5), -5px 0 5px rgba(128,128,128, 0.5), 0 5px 5px rgba(128, 128, 128, 0.5), 0 -5px 5px rgba(128, 128, 128, 0.5); */
+/* } */  
+.options {
+    list-style: none;
+    padding: 0;
+    /* cursor: pointer; */
+}
+
+
+li {
+    margin: 5px 0;
+    cursor: pointer;
+    /* display: none; */
+    list-style: none;
+    /* text-align: center; */
+    /* display: inline-block; */
+}
+.showquiz-container{
+    top: 50%;
+}
+.quiz-container input{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 15px;
+}
+.quiz-container button{
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+}
+.quiz-container span{
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    cursor: pointer;
+    color: white;
+    line-height: 30px;
+    height: 30px;
+    background-color: green;
+    text-align: center;
+    top: 0px;
+}
+button {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #0056a7;
+}
+
+.hide {
+    display: none;
+}
+
+
+
